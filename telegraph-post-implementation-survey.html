@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegraph - Post-Implementation Survey</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo h1 {
+            color: #667eea;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .logo p {
+            color: #666;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .question {
+            margin-bottom: 30px;
+        }
+        .question label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+        .required {
+            color: #e74c3c;
+        }
+        .scale {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .scale label {
+            flex: 1;
+            text-align: center;
+            padding: 15px 5px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .scale label:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+        .scale input[type="radio"] {
+            display: none;
+        }
+        .scale input[type="radio"]:checked + label {
+            border-color: #667eea;
+            background: #667eea;
+            color: white;
+        }
+        .scale-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #999;
+            margin-top: 8px;
+        }
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+            min-height: 100px;
+        }
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .radio-group label:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+        .radio-group input[type="radio"] {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+            accent-color: #667eea;
+        }
+        .radio-group input[type="radio"]:checked + span {
+            color: #667eea;
+            font-weight: 600;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        .thank-you {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+        .thank-you h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .thank-you p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>📡 Telegraph</h1>
+            <p>AI-Powered Rail Logistics</p>
+        </div>
+
+        <form id="surveyForm">
+            <h2>Post-Implementation Survey</h2>
+            <p class="subtitle">Help us improve your onboarding experience. Takes 2 minutes.</p>
+
+            <!-- Q1: Overall Onboarding Satisfaction -->
+            <div class="question">
+                <label>1. How satisfied were you with the onboarding process? <span class="required">*</span></label>
+                <div class="scale">
+                    <input type="radio" name="onboarding_satisfaction" id="ob1" value="1" required>
+                    <label for="ob1">1</label>
+                    <input type="radio" name="onboarding_satisfaction" id="ob2" value="2">
+                    <label for="ob2">2</label>
+                    <input type="radio" name="onboarding_satisfaction" id="ob3" value="3">
+                    <label for="ob3">3</label>
+                    <input type="radio" name="onboarding_satisfaction" id="ob4" value="4">
+                    <label for="ob4">4</label>
+                    <input type="radio" name="onboarding_satisfaction" id="ob5" value="5">
+                    <label for="ob5">5</label>
+                    <input type="radio" name="onboarding_satisfaction" id="ob6" value="6">
+                    <label for="ob6">6</label>
+                    <input type="radio" name="onboarding_satisfaction" id="ob7" value="7">
+                    <label for="ob7">7</label>
+                    <input type="radio" name="onboarding_satisfaction" id="ob8" value="8">
+                    <label for="ob8">8</label>
+                    <input type="radio" name="onboarding_satisfaction" id="ob9" value="9">
+                    <label for="ob9">9</label>
+                    <input type="radio" name="onboarding_satisfaction" id="ob10" value="10">
+                    <label for="ob10">10</label>
+                </div>
+                <div class="scale-labels">
+                    <span>Very Dissatisfied</span>
+                    <span>Very Satisfied</span>
+                </div>
+            </div>
+
+            <!-- Q2: Platform Ease of Use -->
+            <div class="question">
+                <label>2. How easy was it to get started with the platform? <span class="required">*</span></label>
+                <div class="scale">
+                    <input type="radio" name="ease_of_use" id="eu1" value="1" required>
+                    <label for="eu1">1</label>
+                    <input type="radio" name="ease_of_use" id="eu2" value="2">
+                    <label for="eu2">2</label>
+                    <input type="radio" name="ease_of_use" id="eu3" value="3">
+                    <label for="eu3">3</label>
+                    <input type="radio" name="ease_of_use" id="eu4" value="4">
+                    <label for="eu4">4</label>
+                    <input type="radio" name="ease_of_use" id="eu5" value="5">
+                    <label for="eu5">5</label>
+                    <input type="radio" name="ease_of_use" id="eu6" value="6">
+                    <label for="eu6">6</label>
+                    <input type="radio" name="ease_of_use" id="eu7" value="7">
+                    <label for="eu7">7</label>
+                    <input type="radio" name="ease_of_use" id="eu8" value="8">
+                    <label for="eu8">8</label>
+                    <input type="radio" name="ease_of_use" id="eu9" value="9">
+                    <label for="eu9">9</label>
+                    <input type="radio" name="ease_of_use" id="eu10" value="10">
+                    <label for="eu10">10</label>
+                </div>
+                <div class="scale-labels">
+                    <span>Very Difficult</span>
+                    <span>Very Easy</span>
+                </div>
+            </div>
+
+            <!-- Q3: Training Quality -->
+            <div class="question">
+                <label>3. How would you rate the quality of training provided? <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="training_quality" value="excellent" required>
+                        <span>Excellent - I feel fully equipped to use Telegraph</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="training_quality" value="good">
+                        <span>Good - Most things were clear, but I have some questions</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="training_quality" value="fair">
+                        <span>Fair - I understood the basics but need more support</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="training_quality" value="poor">
+                        <span>Poor - I still don't feel confident using the platform</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Q4: Time to Value -->
+            <div class="question">
+                <label>4. How long did it take before you saw value from Telegraph? <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="time_to_value" value="immediate" required>
+                        <span>Immediately - right after setup</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="time_to_value" value="days">
+                        <span>Within a few days</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="time_to_value" value="week">
+                        <span>About a week</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="time_to_value" value="month">
+                        <span>More than a month</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="time_to_value" value="not_yet">
+                        <span>Haven't seen value yet</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Q5: Friction Points -->
+            <div class="question">
+                <label>5. What was the biggest friction point during implementation?</label>
+                <textarea name="friction_points" placeholder="E.g., data migration, team training, integration with existing systems..."></textarea>
+            </div>
+
+            <!-- Q6: Support Quality -->
+            <div class="question">
+                <label>6. How responsive was our support team during onboarding? <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="support_quality" value="very_responsive" required>
+                        <span>Very responsive - always there when I needed help</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="support_quality" value="responsive">
+                        <span>Responsive - got help within a reasonable time</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="support_quality" value="slow">
+                        <span>Slow - had to wait longer than expected</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="support_quality" value="unresponsive">
+                        <span>Unresponsive - struggled to get help</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Q7: Improvement Suggestions -->
+            <div class="question">
+                <label>7. What could we have done better during your onboarding?</label>
+                <textarea name="improvements" placeholder="Your feedback helps us improve for future customers..."></textarea>
+            </div>
+
+            <!-- Q8: Likelihood to Recommend -->
+            <div class="question">
+                <label>8. Based on your onboarding experience, how likely are you to recommend Telegraph to other rail shippers? <span class="required">*</span></label>
+                <div class="scale">
+                    <input type="radio" name="nps" id="nps0" value="0" required>
+                    <label for="nps0">0</label>
+                    <input type="radio" name="nps" id="nps1" value="1">
+                    <label for="nps1">1</label>
+                    <input type="radio" name="nps" id="nps2" value="2">
+                    <label for="nps2">2</label>
+                    <input type="radio" name="nps" id="nps3" value="3">
+                    <label for="nps3">3</label>
+                    <input type="radio" name="nps" id="nps4" value="4">
+                    <label for="nps4">4</label>
+                    <input type="radio" name="nps" id="nps5" value="5">
+                    <label for="nps5">5</label>
+                    <input type="radio" name="nps" id="nps6" value="6">
+                    <label for="nps6">6</label>
+                    <input type="radio" name="nps" id="nps7" value="7">
+                    <label for="nps7">7</label>
+                    <input type="radio" name="nps" id="nps8" value="8">
+                    <label for="nps8">8</label>
+                    <input type="radio" name="nps" id="nps9" value="9">
+                    <label for="nps9">9</label>
+                    <input type="radio" name="nps" id="nps10" value="10">
+                    <label for="nps10">10</label>
+                </div>
+                <div class="scale-labels">
+                    <span>Not at all likely</span>
+                    <span>Extremely likely</span>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Feedback</button>
+        </form>
+
+        <div class="thank-you" id="thankYou">
+            <h2>Thank You! 🎉</h2>
+            <p>Your feedback helps us improve Telegraph for rail shippers like you.</p>
+            <p style="margin-top: 20px; font-size: 14px;">Questions? Contact us at support@telegraph.io</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('surveyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Log data (replace with your backend endpoint)
+            console.log('Survey Response:', data);
+            
+            // Show thank you message
+            this.style.display = 'none';
+            document.getElementById('thankYou').style.display = 'block';
+            
+            // Optional: Send to your backend
+            // fetch('YOUR_ENDPOINT', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify(data)
+            // });
+        });
+    </script>
+</body>
+</html>
