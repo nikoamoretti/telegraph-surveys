@@ -1,0 +1,147 @@
+{
+  "title": "Telegraph - 3 Month Check-In",
+  "settings": {
+    "language": "en",
+    "progress_bar": "proportion",
+    "show_progress_bar": true
+  },
+  "welcome_screens": [{
+    "title": "3-Month Check-In 🎉",
+    "properties": {
+      "description": "You've been using Telegraph for 3 months. Help us understand your experience and get a $20 Amazon gift card!"
+    }
+  }],
+  "fields": [
+    {
+      "type": "opinion_scale",
+      "title": "Overall, how satisfied are you with Telegraph?",
+      "properties": {
+        "steps": 10,
+        "start_at_one": true,
+        "labels": {
+          "left": "Very Dissatisfied",
+          "right": "Very Satisfied"
+        }
+      },
+      "validations": {"required": true}
+    },
+    {
+      "type": "opinion_scale",
+      "title": "How likely are you to recommend Telegraph to other rail shippers?",
+      "properties": {
+        "steps": 11,
+        "start_at_one": false,
+        "labels": {
+          "left": "Not at all likely",
+          "right": "Extremely likely"
+        }
+      },
+      "validations": {"required": true}
+    },
+    {
+      "type": "multiple_choice",
+      "title": "Has Telegraph improved your rail logistics efficiency?",
+      "properties": {
+        "choices": [
+          {"label": "Yes, significantly - major time/cost savings"},
+          {"label": "Yes, moderately - some noticeable improvements"},
+          {"label": "Slightly - minor improvements"},
+          {"label": "No improvement"},
+          {"label": "It's actually made things more difficult"}
+        ]
+      },
+      "validations": {"required": true}
+    },
+    {
+      "type": "long_text",
+      "title": "What was the biggest pain point Telegraph solved for you?"
+    },
+    {
+      "type": "multiple_choice",
+      "title": "Which features do you use most? (Select all that apply)",
+      "properties": {
+        "allow_multiple_selection": true,
+        "choices": [
+          {"label": "Real-time railcar tracking"},
+          {"label": "Demurrage management"},
+          {"label": "ETA predictions"},
+          {"label": "Fleet management"},
+          {"label": "Automated alerts & notifications"},
+          {"label": "Analytics & reporting"},
+          {"label": "AI chat assistant"},
+          {"label": "Invoice management"}
+        ]
+      }
+    },
+    {
+      "type": "long_text",
+      "title": "What originally motivated you to choose Telegraph? Did that hold true?"
+    },
+    {
+      "type": "long_text",
+      "title": "What features or improvements would you like to see?"
+    },
+    {
+      "type": "multiple_choice",
+      "title": "What would you do if you couldn't use Telegraph anymore?",
+      "properties": {
+        "choices": [
+          {"label": "Go back to our old process (spreadsheets/phone calls)"},
+          {"label": "Switch to a competitor"},
+          {"label": "Build something internally"},
+          {"label": "Not sure"}
+        ]
+      }
+    },
+    {
+      "type": "yes_no",
+      "title": "Would you be willing to provide a testimonial?"
+    },
+    {
+      "type": "long_text",
+      "title": "Please share your testimonial:",
+      "properties": {
+        "description": "What would you tell other rail shippers about Telegraph?"
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "title": "Permission to use your testimonial:",
+      "properties": {
+        "allow_multiple_selection": true,
+        "choices": [
+          {"label": "Use my name and company"},
+          {"label": "Include my job title"},
+          {"label": "Include company logo"}
+        ]
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "title": "Would you like to participate in our referral program?",
+      "properties": {
+        "choices": [
+          {"label": "Yes, I'm interested in referring other shippers"},
+          {"label": "I've already recommended Telegraph to others"},
+          {"label": "No thanks"}
+        ]
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "title": "Would you be willing to be featured as a client on our website?",
+      "properties": {
+        "choices": [
+          {"label": "Yes, happy to be featured"},
+          {"label": "Yes, but anonymously (no company name)"},
+          {"label": "No thanks"}
+        ]
+      }
+    },
+    {
+      "type": "email",
+      "title": "Email address for your $20 gift card:",
+      "validations": {"required": true}
+    }
+  ]
+}

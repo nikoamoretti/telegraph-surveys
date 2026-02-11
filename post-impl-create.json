@@ -1,0 +1,147 @@
+{
+  "title": "Telegraph - Post-Implementation Survey",
+  "type": "quiz",
+  "settings": {
+    "language": "en",
+    "is_public": true,
+    "progress_bar": "proportion"
+  },
+  "welcome_screens": [
+    {
+      "title": "How was your onboarding experience?",
+      "properties": {
+        "description": "We'd love your feedback to help us improve. This will take about 2 minutes."
+      }
+    }
+  ],
+  "thankyou_screens": [
+    {
+      "title": "Thanks for your feedback!",
+      "properties": {
+        "description": "Your input helps us serve you better."
+      }
+    }
+  ],
+  "fields": [
+    {
+      "title": "How would you rate your overall onboarding experience with Telegraph?",
+      "type": "opinion_scale",
+      "ref": "onboarding_rating",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "steps": 10,
+        "start_at_one": true,
+        "labels": {
+          "left": "Poor",
+          "right": "Excellent"
+        }
+      }
+    },
+    {
+      "title": "How would you rate the quality and relevance of the training provided?",
+      "type": "opinion_scale",
+      "ref": "training_rating",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "steps": 10,
+        "start_at_one": true,
+        "labels": {
+          "left": "Poor",
+          "right": "Excellent"
+        }
+      }
+    },
+    {
+      "title": "How long did it take before you saw value from Telegraph?",
+      "type": "multiple_choice",
+      "ref": "time_to_value",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "choices": [
+          {
+            "label": "Within the first week"
+          },
+          {
+            "label": "Within the first 2 weeks"
+          },
+          {
+            "label": "Within the first month"
+          },
+          {
+            "label": "Still waiting to see value"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Did Telegraph meet your expectations based on what you were told during the sales process?",
+      "type": "multiple_choice",
+      "ref": "expectations_met",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "choices": [
+          {
+            "label": "Exceeded expectations"
+          },
+          {
+            "label": "Met expectations"
+          },
+          {
+            "label": "Fell slightly short"
+          },
+          {
+            "label": "Fell significantly short"
+          }
+        ]
+      }
+    },
+    {
+      "title": "What was the biggest friction point during implementation?",
+      "type": "long_text",
+      "ref": "friction_point",
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "title": "How responsive was our team during onboarding?",
+      "type": "multiple_choice",
+      "ref": "responsiveness",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "choices": [
+          {
+            "label": "Excellent – always available"
+          },
+          {
+            "label": "Good – timely responses"
+          },
+          {
+            "label": "Fair – some delays"
+          },
+          {
+            "label": "Poor – hard to reach"
+          }
+        ]
+      }
+    },
+    {
+      "title": "What could we have done better during your onboarding?",
+      "type": "long_text",
+      "ref": "improvements",
+      "validations": {
+        "required": true
+      }
+    }
+  ]
+}

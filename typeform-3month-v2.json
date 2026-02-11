@@ -1,0 +1,283 @@
+{
+  "title": "Telegraph - 3-Month Check-In",
+  "type": "quiz",
+  "settings": {
+    "language": "en",
+    "is_public": true,
+    "progress_bar": "proportion"
+  },
+  "welcome_screens": [
+    {
+      "title": "How's your Telegraph experience going?",
+      "properties": {
+        "description": "You've been using Telegraph for about 3 months now. We'd love to hear how it's going. This takes 2–3 minutes. As a thank you, we'll send you a $20 gift card upon completion."
+      }
+    }
+  ],
+  "thankyou_screens": [
+    {
+      "title": "Thanks for your feedback!",
+      "properties": {
+        "description": "Your input helps us improve. We'll send your $20 gift card to the email on file within 2 business days."
+      }
+    }
+  ],
+  "fields": [
+    {
+      "title": "How likely are you to recommend Telegraph to other rail shippers?",
+      "type": "opinion_scale",
+      "ref": "nps",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "steps": 11,
+        "start_at_one": false,
+        "labels": {
+          "left": "Not at all likely (0)",
+          "right": "Extremely likely (10)"
+        }
+      }
+    },
+    {
+      "title": "What do you like most about Telegraph?",
+      "type": "long_text",
+      "ref": "promoter_feedback",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "description": "Tell us what makes Telegraph valuable for your business."
+      }
+    },
+    {
+      "title": "Would you be willing to provide a testimonial for our website?",
+      "type": "yes_no",
+      "ref": "testimonial_willing",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "description": "We may feature your quote on telegraph.io (with your approval)."
+      }
+    },
+    {
+      "title": "Do you know any other rail shippers who could benefit from Telegraph?",
+      "type": "yes_no",
+      "ref": "referral_willing",
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "title": "If yes, please share their contact info (optional)",
+      "type": "long_text",
+      "ref": "referral_contacts",
+      "validations": {
+        "required": false
+      }
+    },
+    {
+      "title": "Would you be interested in participating in a case study about your experience?",
+      "type": "yes_no",
+      "ref": "case_study_willing",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "description": "A 15-minute call to share your story."
+      }
+    },
+    {
+      "title": "What's holding you back from recommending Telegraph more strongly?",
+      "type": "long_text",
+      "ref": "passive_feedback",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "description": "Your honest feedback helps us improve."
+      }
+    },
+    {
+      "title": "What would need to change for you to rate us higher?",
+      "type": "long_text",
+      "ref": "passive_improvements",
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "title": "We're sorry to hear that. What's not working for you?",
+      "type": "long_text",
+      "ref": "detractor_issues",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "description": "Please be specific — we want to fix this."
+      }
+    },
+    {
+      "title": "Would you be open to a quick call with our team to address your concerns?",
+      "type": "yes_no",
+      "ref": "recovery_call",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "description": "We'll prioritize making this right."
+      }
+    },
+    {
+      "title": "How would you rate the ongoing value Telegraph provides to your operations?",
+      "type": "opinion_scale",
+      "ref": "ongoing_value",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "steps": 10,
+        "start_at_one": true,
+        "labels": {
+          "left": "Not valuable",
+          "right": "Extremely valuable"
+        }
+      }
+    },
+    {
+      "title": "What features or improvements would you most like to see?",
+      "type": "long_text",
+      "ref": "feature_requests",
+      "validations": {
+        "required": false
+      }
+    },
+    {
+      "title": "What is the primary benefit Telegraph provides to your business?",
+      "type": "multiple_choice",
+      "ref": "primary_benefit",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "choices": [
+          {
+            "label": "Time savings / efficiency"
+          },
+          {
+            "label": "Cost savings"
+          },
+          {
+            "label": "Better visibility into shipments"
+          },
+          {
+            "label": "Improved communication with partners"
+          },
+          {
+            "label": "Data and analytics insights"
+          },
+          {
+            "label": "Ease of use"
+          },
+          {
+            "label": "Other (please specify in next question)"
+          }
+        ]
+      }
+    },
+    {
+      "title": "If you selected 'Other,' please describe:",
+      "type": "long_text",
+      "ref": "other_benefit_desc",
+      "validations": {
+        "required": false
+      }
+    },
+    {
+      "title": "Confirm your email for the $20 gift card",
+      "type": "email",
+      "ref": "email",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "description": "We'll send the gift card to this address within 2 business days."
+      }
+    }
+  ],
+  "logic": [
+    {
+      "type": "field",
+      "ref": "nps",
+      "actions": [
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "promoter_feedback"
+            }
+          },
+          "condition": {
+            "op": "greater_equal_than",
+            "vars": [
+              {
+                "type": "field",
+                "value": "nps"
+              },
+              {
+                "type": "constant",
+                "value": 9
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "passive_feedback"
+            }
+          },
+          "condition": {
+            "op": "greater_equal_than",
+            "vars": [
+              {
+                "type": "field",
+                "value": "nps"
+              },
+              {
+                "type": "constant",
+                "value": 7
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "detractor_issues"
+            }
+          },
+          "condition": {
+            "op": "lower_than",
+            "vars": [
+              {
+                "type": "field",
+                "value": "nps"
+              },
+              {
+                "type": "constant",
+                "value": 7
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

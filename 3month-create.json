@@ -1,0 +1,363 @@
+{
+  "title": "Telegraph - 3-Month Check-In",
+  "type": "quiz",
+  "settings": {
+    "language": "en",
+    "is_public": true,
+    "progress_bar": "proportion"
+  },
+  "welcome_screens": [
+    {
+      "title": "How's your Telegraph experience going?",
+      "properties": {
+        "description": "You've been using Telegraph for about 3 months. This takes 3–4 minutes. $20 gift card for all respondents."
+      }
+    }
+  ],
+  "thankyou_screens": [
+    {
+      "title": "Thanks for your feedback!",
+      "properties": {
+        "description": "We'll send your $20 gift card within 2 business days. If you opted into testimonials or referrals, our team will follow up within 3 days."
+      }
+    }
+  ],
+  "fields": [
+    {
+      "title": "How likely are you to recommend Telegraph to other rail shippers?",
+      "type": "opinion_scale",
+      "ref": "nps",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "steps": 11,
+        "start_at_one": false,
+        "labels": {
+          "left": "Not at all likely (0)",
+          "right": "Extremely likely (10)"
+        }
+      }
+    },
+    {
+      "title": "[PROMOTER] What has Telegraph done best for your operations?",
+      "type": "long_text",
+      "ref": "promoter_best",
+      "validations": {
+        "required": false
+      },
+      "properties": {
+        "description": "Your words may be featured in our marketing (with your permission). Skip if not applicable."
+      }
+    },
+    {
+      "title": "[PROMOTER] What would you do if you couldn't use Telegraph anymore?",
+      "type": "multiple_choice",
+      "ref": "promoter_pmf",
+      "validations": {
+        "required": false
+      },
+      "properties": {
+        "choices": [
+          {
+            "label": "We'd be in serious trouble"
+          },
+          {
+            "label": "We'd manage but it would be painful"
+          },
+          {
+            "label": "We'd find an alternative fairly easily"
+          },
+          {
+            "label": "It wouldn't matter much"
+          },
+          {
+            "label": "N/A — skip"
+          }
+        ]
+      }
+    },
+    {
+      "title": "[PROMOTER] Would you be willing to provide a testimonial?",
+      "type": "yes_no",
+      "ref": "testimonial_willing",
+      "validations": {
+        "required": false
+      }
+    },
+    {
+      "title": "[PROMOTER] Please share your testimonial:",
+      "type": "long_text",
+      "ref": "testimonial_text",
+      "validations": {
+        "required": false
+      },
+      "properties": {
+        "description": "What would you tell another rail shipper about Telegraph?"
+      }
+    },
+    {
+      "title": "[PROMOTER] How may we use your testimonial? (select all that apply)",
+      "type": "multiple_choice",
+      "ref": "testimonial_permission",
+      "validations": {
+        "required": false
+      },
+      "properties": {
+        "allow_multiple_selection": true,
+        "choices": [
+          {
+            "label": "Use my name and company"
+          },
+          {
+            "label": "Use my company only (anonymous quote)"
+          },
+          {
+            "label": "Use anonymously (industry description only)"
+          },
+          {
+            "label": "Internal use only"
+          }
+        ]
+      }
+    },
+    {
+      "title": "[PROMOTER] Would you be open to being featured as a client on our website or in a case study?",
+      "type": "multiple_choice",
+      "ref": "case_study_interest",
+      "validations": {
+        "required": false
+      },
+      "properties": {
+        "choices": [
+          {
+            "label": "Yes"
+          },
+          {
+            "label": "No"
+          },
+          {
+            "label": "Maybe — let's talk"
+          },
+          {
+            "label": "N/A — skip"
+          }
+        ]
+      }
+    },
+    {
+      "title": "[PROMOTER] Would you like to participate in our referral program?",
+      "type": "multiple_choice",
+      "ref": "referral_program",
+      "validations": {
+        "required": false
+      },
+      "properties": {
+        "choices": [
+          {
+            "label": "Yes — I know rail shippers who'd benefit"
+          },
+          {
+            "label": "Maybe — tell me more"
+          },
+          {
+            "label": "Not right now"
+          },
+          {
+            "label": "N/A — skip"
+          }
+        ]
+      }
+    },
+    {
+      "title": "[PROMOTER] If yes, please share their contact info:",
+      "type": "long_text",
+      "ref": "referral_contacts",
+      "validations": {
+        "required": false
+      }
+    },
+    {
+      "title": "[PASSIVE] What would make Telegraph a 9 or 10 for you?",
+      "type": "long_text",
+      "ref": "passive_improvement",
+      "validations": {
+        "required": false
+      }
+    },
+    {
+      "title": "[PASSIVE] How has Telegraph impacted your rail logistics operations?",
+      "type": "multiple_choice",
+      "ref": "passive_impact",
+      "validations": {
+        "required": false
+      },
+      "properties": {
+        "choices": [
+          {
+            "label": "Significant improvement"
+          },
+          {
+            "label": "Moderate improvement"
+          },
+          {
+            "label": "Marginal improvement"
+          },
+          {
+            "label": "No noticeable change"
+          },
+          {
+            "label": "Made things harder"
+          },
+          {
+            "label": "N/A — skip"
+          }
+        ]
+      }
+    },
+    {
+      "title": "[PASSIVE] What features or improvements would you most like to see?",
+      "type": "long_text",
+      "ref": "passive_features",
+      "validations": {
+        "required": false
+      }
+    },
+    {
+      "title": "[PASSIVE] Would you like to participate in our referral program?",
+      "type": "multiple_choice",
+      "ref": "passive_referral",
+      "validations": {
+        "required": false
+      },
+      "properties": {
+        "choices": [
+          {
+            "label": "Yes — I know rail shippers who'd benefit"
+          },
+          {
+            "label": "Maybe — tell me more"
+          },
+          {
+            "label": "Not right now"
+          },
+          {
+            "label": "N/A — skip"
+          }
+        ]
+      }
+    },
+    {
+      "title": "[DETRACTOR] What is the primary reason for your score?",
+      "type": "long_text",
+      "ref": "detractor_reason",
+      "validations": {
+        "required": false
+      }
+    },
+    {
+      "title": "[DETRACTOR] What would need to change for you to rate us higher?",
+      "type": "long_text",
+      "ref": "detractor_changes",
+      "validations": {
+        "required": false
+      }
+    },
+    {
+      "title": "[DETRACTOR] Would you like someone from our team to follow up with you directly?",
+      "type": "yes_no",
+      "ref": "detractor_followup",
+      "validations": {
+        "required": false
+      },
+      "properties": {
+        "description": "We'd like to make this right. No reference to your score — just a conversation."
+      }
+    },
+    {
+      "title": "Email address for your gift card",
+      "type": "email",
+      "ref": "email",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "description": "$20 gift card within 2 business days. Everyone gets it — thanks for your honest feedback."
+      }
+    }
+  ],
+  "logic": [
+    {
+      "type": "field",
+      "ref": "nps",
+      "actions": [
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "promoter_best"
+            }
+          },
+          "condition": {
+            "op": "greater_equal_than",
+            "vars": [
+              {
+                "type": "field",
+                "value": "nps"
+              },
+              {
+                "type": "constant",
+                "value": 9
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "passive_improvement"
+            }
+          },
+          "condition": {
+            "op": "greater_equal_than",
+            "vars": [
+              {
+                "type": "field",
+                "value": "nps"
+              },
+              {
+                "type": "constant",
+                "value": 7
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "detractor_reason"
+            }
+          },
+          "condition": {
+            "op": "lower_than",
+            "vars": [
+              {
+                "type": "field",
+                "value": "nps"
+              },
+              {
+                "type": "constant",
+                "value": 7
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

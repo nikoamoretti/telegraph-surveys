@@ -1,0 +1,103 @@
+{
+  "title": "Telegraph - Post-Implementation Survey",
+  "settings": {
+    "language": "en",
+    "progress_bar": "proportion",
+    "show_progress_bar": true
+  },
+  "welcome_screens": [{
+    "title": "Welcome to Telegraph!",
+    "properties": {
+      "description": "Help us improve your onboarding experience. This takes 2 minutes."
+    }
+  }],
+  "fields": [
+    {
+      "type": "opinion_scale",
+      "title": "How satisfied were you with the onboarding process?",
+      "properties": {
+        "steps": 10,
+        "start_at_one": true,
+        "labels": {
+          "left": "Very Dissatisfied",
+          "right": "Very Satisfied"
+        }
+      },
+      "validations": {"required": true}
+    },
+    {
+      "type": "opinion_scale",
+      "title": "How easy was it to get started with the platform?",
+      "properties": {
+        "steps": 10,
+        "start_at_one": true,
+        "labels": {
+          "left": "Very Difficult",
+          "right": "Very Easy"
+        }
+      },
+      "validations": {"required": true}
+    },
+    {
+      "type": "multiple_choice",
+      "title": "How would you rate the quality of training provided?",
+      "properties": {
+        "choices": [
+          {"label": "Excellent - I feel fully equipped to use Telegraph"},
+          {"label": "Good - Most things were clear, but I have some questions"},
+          {"label": "Fair - I understood the basics but need more support"},
+          {"label": "Poor - I still don't feel confident using the platform"}
+        ]
+      },
+      "validations": {"required": true}
+    },
+    {
+      "type": "multiple_choice",
+      "title": "How long did it take before you saw value from Telegraph?",
+      "properties": {
+        "choices": [
+          {"label": "Immediately - right after setup"},
+          {"label": "Within a few days"},
+          {"label": "About a week"},
+          {"label": "More than a month"},
+          {"label": "Haven't seen value yet"}
+        ]
+      },
+      "validations": {"required": true}
+    },
+    {
+      "type": "long_text",
+      "title": "What was the biggest friction point during implementation?"
+    },
+    {
+      "type": "multiple_choice",
+      "title": "How responsive was our support team during onboarding?",
+      "properties": {
+        "choices": [
+          {"label": "Very responsive - always there when I needed help"},
+          {"label": "Responsive - got help within a reasonable time"},
+          {"label": "Slow - had to wait longer than expected"},
+          {"label": "Unresponsive - struggled to get help"}
+        ]
+      },
+      "validations": {"required": true}
+    },
+    {
+      "type": "long_text",
+      "title": "What could we have done better during your onboarding?"
+    },
+    {
+      "type": "opinion_scale",
+      "title": "Based on your onboarding experience, how likely are you to recommend Telegraph to other rail shippers?",
+      "properties": {
+        "steps": 11,
+        "start_at_one": false,
+        "labels": {
+          "left": "Not at all likely",
+          "right": "Extremely likely"
+        }
+      },
+      "validations": {"required": true}
+    }
+  ]
+}

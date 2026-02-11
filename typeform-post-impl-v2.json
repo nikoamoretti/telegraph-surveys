@@ -1,0 +1,166 @@
+{
+  "title": "Telegraph - Post-Implementation Survey",
+  "type": "quiz",
+  "settings": {
+    "language": "en",
+    "is_public": true,
+    "progress_bar": "proportion"
+  },
+  "welcome_screens": [
+    {
+      "title": "How was your onboarding experience?",
+      "properties": {
+        "description": "We'd love your feedback to help us improve. This will take about 2 minutes."
+      }
+    }
+  ],
+  "thankyou_screens": [
+    {
+      "title": "Thanks for your feedback!",
+      "properties": {
+        "description": "Your input helps us serve you better."
+      }
+    }
+  ],
+  "fields": [
+    {
+      "id": "overall_onboarding",
+      "title": "How would you rate your overall onboarding experience with Telegraph?",
+      "type": "opinion_scale",
+      "ref": "onboarding_rating",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "steps": 10,
+        "start_at_one": true,
+        "labels": {
+          "left": "Poor",
+          "right": "Excellent"
+        }
+      }
+    },
+    {
+      "id": "training_quality",
+      "title": "How would you rate the quality and relevance of the training provided?",
+      "type": "opinion_scale",
+      "ref": "training_rating",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "steps": 10,
+        "start_at_one": true,
+        "labels": {
+          "left": "Poor",
+          "right": "Excellent"
+        }
+      }
+    },
+    {
+      "id": "time_to_value",
+      "title": "How long did it take before you saw value from Telegraph?",
+      "type": "multiple_choice",
+      "ref": "time_to_value",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "choices": [
+          {
+            "id": "value_week_1",
+            "label": "Within the first week"
+          },
+          {
+            "id": "value_week_2",
+            "label": "Within the first 2 weeks"
+          },
+          {
+            "id": "value_month_1",
+            "label": "Within the first month"
+          },
+          {
+            "id": "value_waiting",
+            "label": "Still waiting to see value"
+          }
+        ]
+      }
+    },
+    {
+      "id": "expectations_met",
+      "title": "Did Telegraph meet your expectations based on what you were told during the sales process?",
+      "type": "multiple_choice",
+      "ref": "expectations_met",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "choices": [
+          {
+            "id": "exceeded",
+            "label": "Exceeded expectations"
+          },
+          {
+            "id": "met",
+            "label": "Met expectations"
+          },
+          {
+            "id": "slightly_short",
+            "label": "Fell slightly short"
+          },
+          {
+            "id": "significantly_short",
+            "label": "Fell significantly short"
+          }
+        ]
+      }
+    },
+    {
+      "id": "biggest_friction",
+      "title": "What was the biggest friction point during implementation?",
+      "type": "long_text",
+      "ref": "friction_point",
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "id": "team_responsiveness",
+      "title": "How responsive was our team during onboarding?",
+      "type": "multiple_choice",
+      "ref": "responsiveness",
+      "validations": {
+        "required": true
+      },
+      "properties": {
+        "choices": [
+          {
+            "id": "excellent",
+            "label": "Excellent – always available"
+          },
+          {
+            "id": "good",
+            "label": "Good – timely responses"
+          },
+          {
+            "id": "fair",
+            "label": "Fair – some delays"
+          },
+          {
+            "id": "poor",
+            "label": "Poor – hard to reach"
+          }
+        ]
+      }
+    },
+    {
+      "id": "improve_onboarding",
+      "title": "What could we have done better during your onboarding?",
+      "type": "long_text",
+      "ref": "improvements",
+      "validations": {
+        "required": true
+      }
+    }
+  ]
+}
